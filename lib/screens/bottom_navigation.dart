@@ -1,8 +1,8 @@
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
- const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+const TextStyle optionStyle =
+    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
@@ -15,14 +15,12 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  
+
   static const List<Widget> _widgetOptions = <Widget>[
     DashBoard(),
     PageOne(),
     PageOne(),
     PageOne(),
-    
-    
   ];
 
   void _onItemTapped(int index) {
@@ -44,28 +42,37 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.white,),
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
             label: 'Home',
             backgroundColor: Colors.orange,
-            
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.assignment_outlined, color: Colors.white,),
+            icon: Icon(
+              Icons.assignment_outlined,
+              color: Colors.white,
+            ),
             label: 'Report',
             backgroundColor: Colors.orange,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined, color: Colors.white,),
+            icon: Icon(
+              Icons.account_circle_outlined,
+              color: Colors.white,
+            ),
             label: 'Profile',
             backgroundColor: Colors.orange,
           ),
-
-           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined, color: Colors.white,),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle_outlined,
+              color: Colors.white,
+            ),
             label: 'Profile',
             backgroundColor: Colors.orange,
           ),
-         
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
@@ -75,9 +82,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 
-
 class PageOne extends StatefulWidget {
-  const PageOne({ Key? key }) : super(key: key);
+  const PageOne({Key? key}) : super(key: key);
 
   @override
   _PageOneState createState() => _PageOneState();
@@ -90,7 +96,6 @@ class _PageOneState extends State<PageOne> {
       body: Column(
         children: [
           Text('Page one'),
-          
         ],
       ),
     );

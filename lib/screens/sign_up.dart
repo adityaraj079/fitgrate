@@ -81,7 +81,7 @@ class _SignUpState extends State<SignUp> {
               ClipRRect(
                   borderRadius: BorderRadius.circular(0),
                   child: Image(
-                      image: AssetImage('assets/Fitegrate/black_bg_logo.jpeg'),
+                      image: AssetImage('assets/Fitegrate/newest_logo.png'),
                       height: 166,
                       width: 147)),
               SizedBox(
@@ -104,17 +104,19 @@ class _SignUpState extends State<SignUp> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   // child: Icon(Icons.email, size: 28, ),
-                      // ),
+                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.person_outline, size: 28, color: Colors.black87, ),
+                      ),
                       hintText: 'Name',
                       hintStyle: TextStyle(
                           color: Colors.black87,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    style: TextStyle(color: Colors.black87,  fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
                   ),
@@ -148,17 +150,19 @@ class _SignUpState extends State<SignUp> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   //child: Icon(Icons.email, size: 28, ),
-                      // ),
+                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.email_outlined, size: 28, color: Colors.black87,),
+                      ),
                       hintText: 'Email id',
                       hintStyle: TextStyle(
                           color: Colors.black87,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    style: TextStyle(color: Colors.black87,  fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                   ),
@@ -184,17 +188,19 @@ class _SignUpState extends State<SignUp> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   //child: Icon(Icons.email, size: 28, ),
-                      // ),
+                     // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                      ),
                       hintText: 'Password',
                       hintStyle: TextStyle(
                           color: Colors.black87,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    style: TextStyle(color: Colors.black87,  fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,
@@ -221,17 +227,19 @@ class _SignUpState extends State<SignUp> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   //child: Icon(Icons.email, size: 28, ),
-                      // ),
+                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                      ),
                       hintText: 'Confirm Password',
                       hintStyle: TextStyle(
                           color: Colors.black87,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    style: TextStyle(color: Colors.black87,  fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,

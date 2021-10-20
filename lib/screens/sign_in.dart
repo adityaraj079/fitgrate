@@ -59,11 +59,11 @@ class _SignInState extends State<SignIn> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   // child: Icon(Icons.email, size: 28, ),
-                      // ),
+                     // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.email_outlined, size: 28, color: Colors.black87,),
+                      ),
                       hintText: 'Email Id',
 
                       hintStyle: TextStyle(
@@ -74,7 +74,8 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.black, fontSize: 15,
+                        fontWeight: FontWeight.bold,),
                   ),
                 ),
               ),
@@ -98,20 +99,23 @@ class _SignInState extends State<SignIn> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      // prefixIcon: Padding(
-                      //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                      //   //child: Icon(Icons.email, size: 28, ),
-                      // ),
+                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                      ),
                       hintText: 'Password',
                       hintStyle: TextStyle(
                           color: Colors.orange[300],
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
+                    
                     keyboardType: TextInputType.emailAddress,
+                    obscureText: true,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.black, fontSize: 15,
+                        fontWeight: FontWeight.bold,),
                   ),
                 ),
               ),

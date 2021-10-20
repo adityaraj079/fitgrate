@@ -63,6 +63,7 @@ flutter:
     - assets/Fitegrate/black_bg_logo.jpeg
     - assets/Fitegrate/logo_noname.jpeg
     - assets/Fitegrate/black_part2.jpeg
+    - assets/Fitegrate/newest_logo.png
    
 
   # An image asset can refer to one or more resolution-specific "variants", see
