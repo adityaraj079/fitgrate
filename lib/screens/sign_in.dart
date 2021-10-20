@@ -1,28 +1,31 @@
 //import 'package:fitegrate_project/rounded_button.dart';
+import 'package:fitegrate_project/provider/google_sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-Widget _buildSocialBtn(Function onTap, AssetImage logo) {
-  return GestureDetector(
-    child: Container(
-      height: 40.0,
-      width: 40.0,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            offset: Offset(0, 2),
-            blurRadius: 4.0,
-          ),
-        ],
-        image: DecorationImage(
-          image: logo,
-        ),
-      ),
-    ),
-  );
-}
+// Widget _buildSocialBtn(Function onTap, AssetImage logo) {
+//   return GestureDetector(
+//     child: Container(
+     
+//       height: 40.0,
+//       width: 40.0,
+//       decoration: BoxDecoration(
+//         shape: BoxShape.circle,
+//         color: Colors.white,
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.black26,
+//             offset: Offset(0, 2),
+//             blurRadius: 4.0,
+//           ),
+//         ],
+//         image: DecorationImage(
+//           image: logo,
+//         ),
+//       ),
+//     ),
+//   );
+// }
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -226,23 +229,48 @@ class _SignInState extends State<SignIn> {
                   //   ),
                   // ),
 
-                  _buildSocialBtn(
-                    () => print('Login with Facebook'),
-                    AssetImage(
-                      'assets/Logos/facebook.jpg',
-                    ),
+                  // _buildSocialBtn(
+                  //   () => print('Login with Facebook'),
+                  //   AssetImage(
+                  //     'assets/Logos/facebook.jpg',
+                  //   ),
+                  // ),
+                  Container(
+                height: size.height * 0.065,
+                width: size.width * 0.6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Colors.orange[400],
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    // Navigator.pushNamed(context, 'BottomNavigation');
+                    final provider = 
+                        Provider.of<GoogleSignInProvider>(context, listen: false);
+                        provider.googleLogin();
+                  },
+                  child: Text(
+                    'Sign In with google',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
+                ),
+              ),
 
                   SizedBox(
                     width: size.width * 0.10,
                   ),
 
-                  _buildSocialBtn(
-                    () => print('Login with Google'),
-                    AssetImage(
-                      'assets/Logos/google.jpg',
-                    ),
-                  ),
+                  // _buildSocialBtn(
+                  //   () {
+                  //     final provider = 
+                  //       Provider.of<GoogleSignInProvider>(context, listen: false);
+                  //       provider.googleLogin();
+                  //   },
+                  //   AssetImage(
+                  //     'assets/Logos/google.jpg',
+                    
+                  //   ),
+                  // ),
                 ],
               ),
 

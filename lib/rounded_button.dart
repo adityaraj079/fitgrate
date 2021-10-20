@@ -1,6 +1,6 @@
-import 'package:fitegrate_project/pallete.dart';
+
 import 'package:flutter/material.dart';
-import 'pallete.dart';
+
 
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
