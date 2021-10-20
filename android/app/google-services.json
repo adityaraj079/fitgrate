@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "53566525681-rhsgm67f6kcdkfon9gr0cp9qhpoqqeni.apps.googleusercontent.com",
+          "client_id": "53566525681-2g4neflncbqdtcifi2bsm8e2mi7fp516.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.fitegrate_project",
-            "certificate_hash": "60963b906665c37d1aea8b52ab60879b3b298c3b"
+            "certificate_hash": "fe22b73721b2852ad265d9b1c2a5b3b2651b542e"
           }
         },
         {
