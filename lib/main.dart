@@ -4,6 +4,7 @@ import 'package:fitegrate_project/provider/google_sign_in.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/home.dart';
+import 'package:fitegrate_project/screens/sign_up.dart';
 
 import 'package:flutter/material.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         'SignIn': (context) => SignIn(),
+        'SignUp': (context) => SignUp(),
         'Dashboard':(context) => DashBoard(),
         'BottomNavigation':(context) => MyStatefulWidget(),
       },

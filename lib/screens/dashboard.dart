@@ -249,8 +249,8 @@ class _DashBoardState extends State<DashBoard> {
                           'Health Assessment', //textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
+                            fontSize: 16,
+                            //fontWeight: FontWeight.normal,
                           ),
                           textAlign: TextAlign.center,
                           //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
@@ -278,7 +278,7 @@ class _DashBoardState extends State<DashBoard> {
                           'Base Line Fitness Assessment', //textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                           textAlign: TextAlign.center,
                           //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
