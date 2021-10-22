@@ -362,13 +362,18 @@ class _SignUpState extends State<SignUp> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    'Sign in',
-                    style: TextStyle(
-                        color: Colors.blue[800],
+                 GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'SignIn'),
+                    child: Container(
+                      child: Text('Sign In',
+                      style: TextStyle(
+                        color: Colors.blue[600],
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
-                  )
+                      ),
+                      
+                      ),
+                      ),
                 ],
               ),
             ],
