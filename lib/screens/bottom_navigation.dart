@@ -1,4 +1,5 @@
 import 'package:fitegrate_project/screens/dashboard.dart';
+import 'package:fitegrate_project/screens/profile.dart';
 import 'package:flutter/material.dart';
 
 const TextStyle optionStyle =
@@ -16,11 +17,11 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
+   List<Widget> _widgetOptions = <Widget>[
     DashBoard(),
     PageOne(),
     PageOne(),
-    PageOne(),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {

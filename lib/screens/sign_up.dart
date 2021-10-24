@@ -1,5 +1,7 @@
 //import 'package:fitegrate_project/rounded_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:fitegrate_project/provider/google_sign_in.dart';
 
 Widget _buildSocialBtn(Function onTap, AssetImage logo) {
   return GestureDetector(
@@ -83,7 +85,8 @@ class _SignUpState extends State<SignUp> {
                   child: Image(
                       image: AssetImage('assets/Fitegrate/newest_logo.png'),
                       height: 166,
-                      width: 147)),
+                      width: 147),
+                      ),
               SizedBox(
                 height: size.height * 0.02,
               ),
@@ -262,7 +265,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, 'SignIn');
+                    Navigator.pushNamed(context, 'Dashboard');
                     // main();
                     // UserCredential userCredential = await auth.signInAnonymously();
                     // print(userCredential);
@@ -275,13 +278,13 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.06,
+                height: size.height * 0.03,
               ),
 
               Text(
                 'Or sign up with',
                 style: TextStyle(
-                    color: Colors.black54,
+                    color: Colors.black87,
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
@@ -290,24 +293,109 @@ class _SignUpState extends State<SignUp> {
                 height: size.height * 0.02,
               ),
 
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                _buildSocialBtn(
-                  () => print('Login with Facebook'),
-                  AssetImage(
-                    'assets/Logos/facebook.jpg',
-                  ),
-                ),
+              // Column(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     SignInButton(
+              //     Buttons.Google,
+              //     //mini: true,
+              //     onPressed: () {
+              //       // final provider = 
+              //       //     Provider.of<GoogleSignInProvider>(context, listen: false);
+              //       //     provider.googleLogin();
+              //     },
+              //     ),
 
-                SizedBox(
-                  width: size.width * 0.10,
-                ),
+              //     SizedBox( width: size.height * 0.08,),
 
-                _buildSocialBtn(
-                  () => print('Login with Google'),
-                  AssetImage(
-                    'assets/Logos/google.jpg',
-                  ),
-                ),
+              //     SignInButton(
+              //     Buttons.Facebook,
+              //     //mini: true,
+              //     onPressed: () {},
+              //     ),
+
+              //   ],
+              // ),
+
+            
+            //   Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     children: [
+            //         Container(
+            //     height: size.height * 0.065,
+            //     width: size.width * 0.3,
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(0),
+            //       color: Colors.white,
+                  
+            //     ),
+                
+            //     child: 
+                              
+            //     TextButton(
+            //       onPressed: () {
+            //         //Navigator.pushNamed(context, 'Dashboard');
+            //         // main();
+            //         // UserCredential userCredential = await auth.signInAnonymously();
+            //         // print(userCredential);
+            //       },
+            //       child: Text(
+            //         'Google',
+            //         style: TextStyle(color: Colors.black87, fontSize: 20),
+            //         //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
+            //       ),
+            //     ),
+            //   ),
+            
+            //  SizedBox( width: size.width * 0.08,),
+
+
+
+            //  Container(
+            //     height: size.height * 0.065,
+            //     width: size.width * 0.3,
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(0),
+            //       color: Colors.white,
+            //     ),
+            //     child: TextButton(
+            //       onPressed: () {
+            //         //Navigator.pushNamed(context, 'Dashboard');
+            //         // main();
+            //         // UserCredential userCredential = await auth.signInAnonymously();
+            //         // print(userCredential);
+            //       },
+            //       child: Text(
+            //         'Facebook',
+            //         style: TextStyle(color: Colors.black87, fontSize: 20),
+            //         //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
+            //       ),
+            //     ),
+            //   ),
+
+            //     ],
+            //   ),
+              
+
+              // Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              //   _buildSocialBtn(
+              //     () => print('Login with Facebook'),
+              //     AssetImage(
+              //       'assets/Logos/facebook.jpg',
+              //     ),
+              //   ),
+
+              //   SizedBox(
+              //     width: size.width * 0.10,
+              //   ),
+
+              //   _buildSocialBtn(
+              //     () => print('Login with Google'),
+              //     AssetImage(
+              //       'assets/Logos/google.jpg',
+              //     ),
+              //   ),
 
                 //     InkWell(
                 //   onTap: () {},
@@ -346,7 +434,9 @@ class _SignUpState extends State<SignUp> {
                 //     ),
                 //   ),
                 // ),
-              ]),
+          
+            
+              
 
               SizedBox(
                 height: size.height * 0.02,
@@ -358,7 +448,7 @@ class _SignUpState extends State<SignUp> {
                   Text(
                     'Already have an account? ',
                     style: TextStyle(
-                        color: Colors.black54,
+                        color: Colors.black87,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),

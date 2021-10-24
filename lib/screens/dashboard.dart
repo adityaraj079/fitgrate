@@ -245,11 +245,12 @@ class _DashBoardState extends State<DashBoard> {
                       },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
+                        
                         child: Text(
                           'Health Assessment', //textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 15,
                             //fontWeight: FontWeight.normal,
                           ),
                           textAlign: TextAlign.center,
@@ -278,7 +279,7 @@ class _DashBoardState extends State<DashBoard> {
                           'Base Line Fitness Assessment', //textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 15,
                           ),
                           textAlign: TextAlign.center,
                           //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
