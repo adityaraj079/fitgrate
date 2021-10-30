@@ -4,6 +4,8 @@ import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:fitegrate_project/provider/google_sign_in.dart';
 
 
 class RoundedButton extends StatelessWidget {
@@ -72,7 +74,8 @@ class _SignUpState extends State<SignUp> {
                   child: Image(
                       image: AssetImage('assets/Fitegrate/newest_logo.png'),
                       height: 166,
-                      width: 147)),
+                      width: 147),
+                      ),
               SizedBox(
                 height: size.height * 0.02,
               ),
@@ -254,7 +257,7 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.06,
+                height: size.height * 0.03,
               ),
 
             
@@ -263,20 +266,7 @@ class _SignUpState extends State<SignUp> {
                 height: size.height * 0.02,
               ),
 
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                // _buildSocialBtn(
-                //   () => print('Login with Facebook'),
-                //   AssetImage(
-                //     'assets/Logos/facebook.jpg',
-                //   ),
-                // ),
-
-                SizedBox(
-                  width: size.width * 0.10,
-                ),
-
-                
-              ]),
+              
 
               SizedBox(
                 height: size.height * 0.02,
@@ -288,7 +278,7 @@ class _SignUpState extends State<SignUp> {
                   Text(
                     'Already have an account? ',
                     style: TextStyle(
-                        color: Colors.black54,
+                        color: Colors.black87,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
