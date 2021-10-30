@@ -1,6 +1,7 @@
 import 'dart:core';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/home.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         'SignIn': (context) => SignIn(),
         'SignUp': (context) => SignUp(),
+        'Getting_Started': (context) => GetStarted(),
         'Dashboard':(context) => DashBoard(),
         'BottomNavigation':(context) => MyStatefulWidget(),
       },
