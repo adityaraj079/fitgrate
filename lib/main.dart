@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
+import 'package:fitegrate_project/screens/forgotpassword.dart';
 import 'package:fitegrate_project/screens/home.dart';
 import 'package:fitegrate_project/screens/sign_up.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         'SignUp': (context) => SignUp(),
         'Dashboard':(context) => DashBoard(),
         'BottomNavigation':(context) => MyStatefulWidget(),
+        'forgotpassword':(context) => forgotpassword(),
       },
       ),
       ); 

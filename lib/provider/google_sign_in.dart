@@ -31,7 +31,8 @@ idToken: googleAuth.idToken,
   notifyListeners();
 }
 Future logout() async{
+  await FirebaseAuth.instance.signOut();
   await googleSignIn.disconnect();
-  FirebaseAuth.instance.signOut();
+  
 }
 }

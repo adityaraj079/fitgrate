@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget{
+  
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 @override
   Widget build(BuildContext context){
@@ -16,6 +17,8 @@ class Profile extends StatelessWidget{
        actions: [TextButton( 
          child: Text('Logout'),
        onPressed: (){
+         
+         
          final provider = Provider.of<GoogleSignInProvider>(context, listen:false);
          provider.logout();
        },
@@ -33,13 +36,14 @@ class Profile extends StatelessWidget{
                 style: TextStyle(fontSize: 24),
               ),
               SizedBox(height: 32),
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(user.photoURL!)
-              ),
+              // CircleAvatar(
+              //   radius: 40,
+              //   backgroundImage: NetworkImage(user.photoURL!)
+              // ),
               SizedBox(height: 8),
               Text(
-                'Name  '+ user.displayName!,
+                'Name  '+ user.displayName!
+                ,
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               SizedBox(height: 8 ),
