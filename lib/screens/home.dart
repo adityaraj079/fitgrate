@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitegrate_project/screens/profile.dart';
+import 'package:fitegrate_project/screens/bottom_navigation.dart';
+//import 'package:fitegrate_project/screens/dashboard.dart';
+//import 'package:fitegrate_project/screens/profile.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +14,7 @@ class HomePage extends StatelessWidget{
         if (snapshot.connectionState == ConnectionState.waiting){
         return Center(child: CircularProgressIndicator());
       } else if(snapshot.hasData){
-        return Profile();
+        return MyStatefulWidget();
       }
       
       else if (snapshot.hasError){
