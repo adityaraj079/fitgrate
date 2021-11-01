@@ -8,7 +8,6 @@ import 'package:fitegrate_project/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 
 class SignIn extends StatefulWidget {
@@ -128,7 +127,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               SizedBox(
-                height: size.height * 0.03,
+                height: size.height * 0.035,
               ),
 
               Container(
@@ -140,7 +139,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: TextButton(
                   onPressed: () async {
-                    _loginwith=true;
+                    SignIn.loginwith=true;
                     {
                       setState(() {
                         
@@ -158,7 +157,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               SizedBox(
-                height: size.height * 0.03,
+                height: size.height * 0.06,
               ),
 
               GestureDetector(
@@ -174,7 +173,7 @@ class _SignInState extends State<SignIn> {
                       ),
                       ),
               SizedBox(
-                height: size.height * 0.03,
+                height: size.height * 0.04,
               ),
 
               Text(
@@ -189,12 +188,9 @@ class _SignInState extends State<SignIn> {
                 height: size.height * 0.02,
               ),
 
-              
-
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-<<<<<<< HEAD
             
                   Container(
                 height: size.height * 0.065,
@@ -207,33 +203,21 @@ class _SignInState extends State<SignIn> {
                   onPressed: () {
                     
                     // Navigator.pushNamed(context, 'BottomNavigation');
-=======
-                  SignInButton(
-                  Buttons.Google,
-                  //mini: true,
-                  onPressed: () {
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
                     final provider = 
                         Provider.of<GoogleSignInProvider>(context, listen: false);
                         provider.googleLogin();
                   },
-<<<<<<< HEAD
                   child: Text(
                     'google',
                     style: TextStyle(color: Colors.white, fontSize: 20),
-=======
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
+                  ),
+                ),
+              ),
+
+                  SizedBox(
+                    width: size.width * 0.10,
                   ),
 
-                  SizedBox( width: size.height * 0.08,),
-
-                  SignInButton(
-                  Buttons.Facebook,
-                  //mini: true,
-                  onPressed: () {},
-                  ),
-
-<<<<<<< HEAD
                   Container(
                 height: size.height * 0.065,
                 width: size.width * 0.3,
@@ -254,49 +238,6 @@ class _SignInState extends State<SignIn> {
               ),
                 ],
               ),
-=======
-                ],
-              ),
-            
-              //     Container(
-              //   height: size.height * 0.065,
-              //   width: size.width * 0.6,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(22),
-              //     color: Colors.orange[400],
-              //   ),
-              //   child: TextButton(
-              //     onPressed: () {
-              //       // Navigator.pushNamed(context, 'BottomNavigation');
-              //       final provider = 
-              //           Provider.of<GoogleSignInProvider>(context, listen: false);
-              //           provider.googleLogin();
-              //     },
-              //     child: Text(
-              //       'Sign In with google',
-              //       style: TextStyle(color: Colors.white, fontSize: 20),
-              //     ),
-              //   ),
-              // ),
-
-                  // SizedBox(
-                  //   width: size.width * 0.10,
-                  // ),
-
-                  // _buildSocialBtn(
-                  //   () {
-                  //     final provider = 
-                  //       Provider.of<GoogleSignInProvider>(context, listen: false);
-                  //       provider.googleLogin();
-                  //   },
-                  //   AssetImage(
-                  //     'assets/Logos/google.jpg',
-                    
-                  //   ),
-                  // ),
-                
-              
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
 
               SizedBox(
                 height: size.height * 0.02,
