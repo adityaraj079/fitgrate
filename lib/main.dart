@@ -5,9 +5,9 @@ import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/forgotpassword.dart';
+import 'package:fitegrate_project/screens/healthassessment.dart';
 import 'package:fitegrate_project/screens/home.dart';
 import 'package:fitegrate_project/screens/sign_up.dart';
-
 import 'package:flutter/material.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
 
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         'Dashboard':(context) => DashBoard(),
         'BottomNavigation':(context) => MyStatefulWidget(),
         'forgotpassword':(context) => forgotpassword(),
+        'HealthAssessment':(context) => HealthAssessment(),
       },
       ),
       ); 

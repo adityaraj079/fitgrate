@@ -1,4 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -10,12 +14,13 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
+     final  user = FirebaseAuth.instance.currentUser!;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.orange[400],
-        title: Text('Hi, username'),
+        title: Text('Hi, '+ user.displayName!),
         actions: [
           IconButton(
             onPressed: () {},
@@ -238,7 +243,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, 'SignIn');
+                        Navigator.pushNamed(context, 'HealthAssessment');
                         // main();
                         // UserCredential userCredential = await auth.signInAnonymously();
                         // print(userCredential);

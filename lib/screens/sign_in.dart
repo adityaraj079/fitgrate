@@ -10,17 +10,16 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
+bool loginwith = false;
 
 class SignIn extends StatefulWidget {
-  static bool loginwith = false;
   const SignIn({Key? key}) : super(key: key);
-  
+
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-  
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -66,13 +65,16 @@ class _SignInState extends State<SignIn> {
                 child: Center(
                   child: TextField(
                     controller: _emailController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                     // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.email_outlined, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.email_outlined,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Email Id',
 
@@ -84,8 +86,11 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black, fontSize: 15,
-                        fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -103,13 +108,16 @@ class _SignInState extends State<SignIn> {
                 child: Center(
                   child: TextField(
                     controller: _passwordController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.lock_outline,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Password',
                       hintStyle: TextStyle(
@@ -117,12 +125,14 @@ class _SignInState extends State<SignIn> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black, fontSize: 15,
-                        fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -140,14 +150,11 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: TextButton(
                   onPressed: () async {
-                    _loginwith=true;
+                    loginwith = true;
                     {
                       setState(() {
-                        
                         _signInWithEmailAndPassword();
-                        
                       });
-                    
                     }
                   },
                   child: Text(
@@ -162,17 +169,17 @@ class _SignInState extends State<SignIn> {
               ),
 
               GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
-                    child: Container(
-                      child: Text('Forgot Password',
-                      style: TextStyle(
+                onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
+                child: Container(
+                  child: Text(
+                    'Forgot Password',
+                    style: TextStyle(
                         color: Colors.blue[600],
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
-                      ),
-                      
-                      ),
-                      ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: size.height * 0.03,
               ),
@@ -189,75 +196,30 @@ class _SignInState extends State<SignIn> {
                 height: size.height * 0.02,
               ),
 
-              
-
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-<<<<<<< HEAD
-            
-                  Container(
-                height: size.height * 0.065,
-                width: size.width * 0.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Colors.orange[400],
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    
-                    // Navigator.pushNamed(context, 'BottomNavigation');
-=======
                   SignInButton(
-                  Buttons.Google,
-                  //mini: true,
-                  onPressed: () {
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
-                    final provider = 
-                        Provider.of<GoogleSignInProvider>(context, listen: false);
-                        provider.googleLogin();
-                  },
-<<<<<<< HEAD
-                  child: Text(
-                    'google',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-=======
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
+                    Buttons.Google,
+                    //mini: true,
+                    onPressed: () {
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.googleLogin();
+                    },
                   ),
-
-                  SizedBox( width: size.height * 0.08,),
-
+                  SizedBox(
+                    width: size.height * 0.08,
+                  ),
                   SignInButton(
-                  Buttons.Facebook,
-                  //mini: true,
-                  onPressed: () {},
+                    Buttons.Facebook,
+                    //mini: true,
+                    onPressed: () {},
                   ),
-
-<<<<<<< HEAD
-                  Container(
-                height: size.height * 0.065,
-                width: size.width * 0.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Colors.orange[400],
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    // Navigator.pushNamed(context, 'BottomNavigation');
-                    
-                  },
-                  child: Text(
-                    'facebook',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ),
-              ),
                 ],
               ),
-=======
-                ],
-              ),
-            
+
               //     Container(
               //   height: size.height * 0.065,
               //   width: size.width * 0.6,
@@ -268,7 +230,7 @@ class _SignInState extends State<SignIn> {
               //   child: TextButton(
               //     onPressed: () {
               //       // Navigator.pushNamed(context, 'BottomNavigation');
-              //       final provider = 
+              //       final provider =
               //           Provider.of<GoogleSignInProvider>(context, listen: false);
               //           provider.googleLogin();
               //     },
@@ -279,24 +241,21 @@ class _SignInState extends State<SignIn> {
               //   ),
               // ),
 
-                  // SizedBox(
-                  //   width: size.width * 0.10,
-                  // ),
+              // SizedBox(
+              //   width: size.width * 0.10,
+              // ),
 
-                  // _buildSocialBtn(
-                  //   () {
-                  //     final provider = 
-                  //       Provider.of<GoogleSignInProvider>(context, listen: false);
-                  //       provider.googleLogin();
-                  //   },
-                  //   AssetImage(
-                  //     'assets/Logos/google.jpg',
-                    
-                  //   ),
-                  // ),
-                
-              
->>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
+              // _buildSocialBtn(
+              //   () {
+              //     final provider =
+              //       Provider.of<GoogleSignInProvider>(context, listen: false);
+              //       provider.googleLogin();
+              //   },
+              //   AssetImage(
+              //     'assets/Logos/google.jpg',
+
+              //   ),
+              // ),
 
               SizedBox(
                 height: size.height * 0.02,
@@ -312,20 +271,18 @@ class _SignInState extends State<SignIn> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'SignUp'),
                     child: Container(
-                      child: Text('Sign Up',
-                      style: TextStyle(
-                        color: Colors.blue[600],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                            color: Colors.blue[600],
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                      
-                      ),
-                      ),
-                  
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -334,19 +291,24 @@ class _SignInState extends State<SignIn> {
       ),
     );
   }
-  _signInWithEmailAndPassword() async{
-    try{
+
+  _signInWithEmailAndPassword() async {
+    try {
       final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
-          email: _emailController.text.trim(), password: _passwordController.text.trim())).user;
-        if(user!=null){
-          setState(() {
-            Fluttertoast.showToast(msg: "Signed In Sucessfully");
+              email: _emailController.text.trim(),
+              password: _passwordController.text.trim()))
+          .user;
+      if (user != null) {
+        setState(() {
+          Fluttertoast.showToast(msg: "Signed In Sucessfully");
 
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()),);
-          });
-        }
-
-    }catch(e){
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        });
+      }
+    } catch (e) {
       Fluttertoast.showToast(msg: e.toString());
     }
   }
