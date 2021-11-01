@@ -7,7 +7,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
 
-
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
     Key? key,
@@ -70,12 +69,12 @@ class _SignUpState extends State<SignUp> {
             //crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               ClipRRect(
-                  borderRadius: BorderRadius.circular(0),
-                  child: Image(
-                      image: AssetImage('assets/Fitegrate/newest_logo.png'),
-                      height: 166,
-                      width: 147),
-                      ),
+                borderRadius: BorderRadius.circular(0),
+                child: Image(
+                    image: AssetImage('assets/Fitegrate/newest_logo.png'),
+                    height: 166,
+                    width: 147),
+              ),
               SizedBox(
                 height: size.height * 0.02,
               ),
@@ -90,13 +89,16 @@ class _SignUpState extends State<SignUp> {
                 child: Center(
                   child: TextField(
                     controller: _nameController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.person_outline, size: 28, color: Colors.black87, ),
+                        child: Icon(
+                          Icons.person_outline,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Name',
                       hintStyle: TextStyle(
@@ -104,8 +106,10 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: TextStyle(color: Colors.black87,  fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
                   ),
@@ -133,13 +137,16 @@ class _SignUpState extends State<SignUp> {
                 child: Center(
                   child: TextField(
                     controller: _emailController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.email_outlined, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.email_outlined,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Email id',
                       hintStyle: TextStyle(
@@ -147,8 +154,10 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: TextStyle(color: Colors.black87,  fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                   ),
@@ -168,13 +177,16 @@ class _SignUpState extends State<SignUp> {
                 child: Center(
                   child: TextField(
                     controller: _passwordController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                     // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.lock_outline,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Password',
                       hintStyle: TextStyle(
@@ -182,8 +194,10 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: TextStyle(color: Colors.black87,  fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,
@@ -204,13 +218,16 @@ class _SignUpState extends State<SignUp> {
                 child: Center(
                   child: TextField(
                     controller: _confpasswordController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.lock_outline,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Confirm Password',
                       hintStyle: TextStyle(
@@ -218,8 +235,10 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: TextStyle(color: Colors.black87,  fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,
@@ -241,14 +260,9 @@ class _SignUpState extends State<SignUp> {
                   color: Colors.black87,
                 ),
                 child: TextButton(
-                  onPressed: () async{
-                   
-                      _register();
-
-                    }, 
-                    
-                    
-                  
+                  onPressed: () async {
+                    _register();
+                  },
                   child: Text(
                     'Sign Up',
                     style: TextStyle(color: Colors.orange[300], fontSize: 20),
@@ -260,13 +274,9 @@ class _SignUpState extends State<SignUp> {
                 height: size.height * 0.03,
               ),
 
-            
-
               SizedBox(
                 height: size.height * 0.02,
               ),
-
-              
 
               SizedBox(
                 height: size.height * 0.02,
@@ -282,18 +292,18 @@ class _SignUpState extends State<SignUp> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-                 GestureDetector(
+                  GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'SignIn'),
                     child: Container(
-                      child: Text('Sign In',
-                      style: TextStyle(
-                        color: Colors.blue[600],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                            color: Colors.blue[600],
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                      
-                      ),
-                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -302,34 +312,37 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
-    @override
-  void dispose()  {
+
+  @override
+  void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
-   void _register()async{
+  void _register() async {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
     String confirmpassword = _confpasswordController.text.trim();
-    if(password == confirmpassword) {
+    if (password == confirmpassword) {
       try {
         final User? user = (await _auth.createUserWithEmailAndPassword(
-            email: email, password: password)).user;
+                email: email, password: password))
+            .user;
         setState(() {
           if (user != null) {
             Fluttertoast.showToast(msg: "user created");
             Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => SignIn()),);
+              context,
+              MaterialPageRoute(builder: (context) => SignIn()),
+            );
           }
         });
       } catch (e) {
         Fluttertoast.showToast(msg: e.toString());
       }
-    }
-    else{
+    } else {
       Fluttertoast.showToast(msg: "Passwords don't match");
     }
-   }
+  }
 }
