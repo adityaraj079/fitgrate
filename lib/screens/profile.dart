@@ -66,7 +66,7 @@ Stack(
       child: Icon(Icons.edit_attributes_outlined, color: Colors.black87,),
     )
   ],
-)
+),
         
 
             ],
