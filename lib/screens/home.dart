@@ -6,6 +6,9 @@ import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget{
+  
+
+  
   @override
   Widget build(BuildContext context) => Scaffold(
     body: StreamBuilder(

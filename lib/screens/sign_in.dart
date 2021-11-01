@@ -1,18 +1,30 @@
 //import 'package:fitegrate_project/rounded_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:fitegrate_project/screens/forgotpassword.dart';
+import 'package:fitegrate_project/screens/home.dart';
+
+import 'package:fitegrate_project/screens/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 
 class SignIn extends StatefulWidget {
+  static bool loginwith = false;
   const SignIn({Key? key}) : super(key: key);
-
+  
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
+  
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,11 +65,8 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _emailController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                      // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -93,11 +102,8 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _passwordController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -133,8 +139,16 @@ class _SignInState extends State<SignIn> {
                   color: Colors.orange[400],
                 ),
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'BottomNavigation');
+                  onPressed: () async {
+                    _loginwith=true;
+                    {
+                      setState(() {
+                        
+                        _signInWithEmailAndPassword();
+                        
+                      });
+                    
+                    }
                   },
                   child: Text(
                     'Sign In',
@@ -147,13 +161,18 @@ class _SignInState extends State<SignIn> {
                 height: size.height * 0.03,
               ),
 
-              Text(
-                'Forgot Password?',
-                style: TextStyle(
-                    color: Colors.blue[600],
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
+              GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
+                    child: Container(
+                      child: Text('Forgot Password',
+                      style: TextStyle(
+                        color: Colors.blue[600],
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                      ),
+                      
+                      ),
+                      ),
               SizedBox(
                 height: size.height * 0.03,
               ),
@@ -175,14 +194,35 @@ class _SignInState extends State<SignIn> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+<<<<<<< HEAD
+            
+                  Container(
+                height: size.height * 0.065,
+                width: size.width * 0.3,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Colors.orange[400],
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    
+                    // Navigator.pushNamed(context, 'BottomNavigation');
+=======
                   SignInButton(
                   Buttons.Google,
                   //mini: true,
                   onPressed: () {
+>>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
                     final provider = 
                         Provider.of<GoogleSignInProvider>(context, listen: false);
                         provider.googleLogin();
                   },
+<<<<<<< HEAD
+                  child: Text(
+                    'google',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+=======
+>>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
                   ),
 
                   SizedBox( width: size.height * 0.08,),
@@ -193,6 +233,28 @@ class _SignInState extends State<SignIn> {
                   onPressed: () {},
                   ),
 
+<<<<<<< HEAD
+                  Container(
+                height: size.height * 0.065,
+                width: size.width * 0.3,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Colors.orange[400],
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    // Navigator.pushNamed(context, 'BottomNavigation');
+                    
+                  },
+                  child: Text(
+                    'facebook',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+                ],
+              ),
+=======
                 ],
               ),
             
@@ -234,6 +296,7 @@ class _SignInState extends State<SignIn> {
                   // ),
                 
               
+>>>>>>> 14d9e4dc7caa6261d85481919e29271c1f5c868b
 
               SizedBox(
                 height: size.height * 0.02,
@@ -270,5 +333,21 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
+  }
+  _signInWithEmailAndPassword() async{
+    try{
+      final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
+          email: _emailController.text.trim(), password: _passwordController.text.trim())).user;
+        if(user!=null){
+          setState(() {
+            Fluttertoast.showToast(msg: "Signed In Sucessfully");
+
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()),);
+          });
+        }
+
+    }catch(e){
+      Fluttertoast.showToast(msg: e.toString());
+    }
   }
 }

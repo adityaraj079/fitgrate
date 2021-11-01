@@ -1,30 +1,12 @@
 //import 'package:fitegrate_project/rounded_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
 
-Widget _buildSocialBtn(Function onTap, AssetImage logo) {
-  return GestureDetector(
-    child: Container(
-      height: 40.0,
-      width: 40.0,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            offset: Offset(0, 2),
-            blurRadius: 4.0,
-          ),
-        ],
-        image: DecorationImage(
-          image: logo,
-        ),
-      ),
-    ),
-  );
-}
 
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
@@ -68,6 +50,13 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confpasswordController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -100,11 +89,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _nameController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -146,11 +132,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _emailController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -184,11 +167,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _passwordController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                      // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -223,11 +203,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: Center(
                   child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        //TextInputFieldEmail.email=value;
-                      });
-                    },
+                    controller: _confpasswordController,
+                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -264,12 +241,14 @@ class _SignUpState extends State<SignUp> {
                   color: Colors.black87,
                 ),
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'Dashboard');
-                    // main();
-                    // UserCredential userCredential = await auth.signInAnonymously();
-                    // print(userCredential);
-                  },
+                  onPressed: () async{
+                   
+                      _register();
+
+                    }, 
+                    
+                    
+                  
                   child: Text(
                     'Sign Up',
                     style: TextStyle(color: Colors.orange[300], fontSize: 20),
@@ -281,161 +260,12 @@ class _SignUpState extends State<SignUp> {
                 height: size.height * 0.03,
               ),
 
-              Text(
-                'Or sign up with',
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
+            
 
               SizedBox(
                 height: size.height * 0.02,
               ),
 
-              // Column(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     SignInButton(
-              //     Buttons.Google,
-              //     //mini: true,
-              //     onPressed: () {
-              //       // final provider = 
-              //       //     Provider.of<GoogleSignInProvider>(context, listen: false);
-              //       //     provider.googleLogin();
-              //     },
-              //     ),
-
-              //     SizedBox( width: size.height * 0.08,),
-
-              //     SignInButton(
-              //     Buttons.Facebook,
-              //     //mini: true,
-              //     onPressed: () {},
-              //     ),
-
-              //   ],
-              // ),
-
-            
-            //   Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     crossAxisAlignment: CrossAxisAlignment.center,
-            //     children: [
-            //         Container(
-            //     height: size.height * 0.065,
-            //     width: size.width * 0.3,
-            //     decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(0),
-            //       color: Colors.white,
-                  
-            //     ),
-                
-            //     child: 
-                              
-            //     TextButton(
-            //       onPressed: () {
-            //         //Navigator.pushNamed(context, 'Dashboard');
-            //         // main();
-            //         // UserCredential userCredential = await auth.signInAnonymously();
-            //         // print(userCredential);
-            //       },
-            //       child: Text(
-            //         'Google',
-            //         style: TextStyle(color: Colors.black87, fontSize: 20),
-            //         //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
-            //       ),
-            //     ),
-            //   ),
-            
-            //  SizedBox( width: size.width * 0.08,),
-
-
-
-            //  Container(
-            //     height: size.height * 0.065,
-            //     width: size.width * 0.3,
-            //     decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(0),
-            //       color: Colors.white,
-            //     ),
-            //     child: TextButton(
-            //       onPressed: () {
-            //         //Navigator.pushNamed(context, 'Dashboard');
-            //         // main();
-            //         // UserCredential userCredential = await auth.signInAnonymously();
-            //         // print(userCredential);
-            //       },
-            //       child: Text(
-            //         'Facebook',
-            //         style: TextStyle(color: Colors.black87, fontSize: 20),
-            //         //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
-            //       ),
-            //     ),
-            //   ),
-
-            //     ],
-            //   ),
-              
-
-              // Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              //   _buildSocialBtn(
-              //     () => print('Login with Facebook'),
-              //     AssetImage(
-              //       'assets/Logos/facebook.jpg',
-              //     ),
-              //   ),
-
-              //   SizedBox(
-              //     width: size.width * 0.10,
-              //   ),
-
-              //   _buildSocialBtn(
-              //     () => print('Login with Google'),
-              //     AssetImage(
-              //       'assets/Logos/google.jpg',
-              //     ),
-              //   ),
-
-                //     InkWell(
-                //   onTap: () {},
-                //   child: Ink(
-                //     color: Color(0xFF397AF3),
-                //     child: Padding(
-                //   padding: EdgeInsets.all(6),
-                //   child: Wrap(
-                //     crossAxisAlignment: WrapCrossAlignment.center,
-                //     children: [
-                //       Icon(Icons.android),
-                //       SizedBox(width: 12),
-                //       Text('Google'),
-                //     ],
-                //   ),
-                //     ),
-                //   ),
-                // ),
-
-                // SizedBox( width: size.width * 0.08,),
-
-                // InkWell(
-                //   onTap: () {},
-                //   child: Ink(
-                //     color: Color(0xFF397AF3),
-                //     child: Padding(
-                //   padding: EdgeInsets.all(6),
-                //   child: Wrap(
-                //     crossAxisAlignment: WrapCrossAlignment.center,
-                //     children: [
-                //       Icon(Icons.android),
-                //       SizedBox(width: 12),
-                //       Text('Facebook'),
-                //     ],
-                //   ),
-                //     ),
-                //   ),
-                // ),
-          
-            
               
 
               SizedBox(
@@ -472,4 +302,34 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
+    @override
+  void dispose()  {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+   void _register()async{
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+    String confirmpassword = _confpasswordController.text.trim();
+    if(password == confirmpassword) {
+      try {
+        final User? user = (await _auth.createUserWithEmailAndPassword(
+            email: email, password: password)).user;
+        setState(() {
+          if (user != null) {
+            Fluttertoast.showToast(msg: "user created");
+            Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => SignIn()),);
+          }
+        });
+      } catch (e) {
+        Fluttertoast.showToast(msg: e.toString());
+      }
+    }
+    else{
+      Fluttertoast.showToast(msg: "Passwords don't match");
+    }
+   }
 }
