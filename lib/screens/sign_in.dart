@@ -9,17 +9,16 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
+bool loginwith = false;
 
 class SignIn extends StatefulWidget {
-  static bool loginwith = false;
   const SignIn({Key? key}) : super(key: key);
-  
+
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-  
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -65,13 +64,16 @@ class _SignInState extends State<SignIn> {
                 child: Center(
                   child: TextField(
                     controller: _emailController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                     // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.email_outlined, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.email_outlined,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Email Id',
 
@@ -83,8 +85,11 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black, fontSize: 15,
-                        fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -102,13 +107,16 @@ class _SignInState extends State<SignIn> {
                 child: Center(
                   child: TextField(
                     controller: _passwordController,
-                    
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.lock_outline, size: 28, color: Colors.black87,),
+                        child: Icon(
+                          Icons.lock_outline,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
                       ),
                       hintText: 'Password',
                       hintStyle: TextStyle(
@@ -116,12 +124,14 @@ class _SignInState extends State<SignIn> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
-                    
                     keyboardType: TextInputType.emailAddress,
                     obscureText: true,
                     textInputAction: TextInputAction.next,
-                    style: TextStyle(color: Colors.black, fontSize: 15,
-                        fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -139,14 +149,15 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: TextButton(
                   onPressed: () async {
+<<<<<<< HEAD
                     SignIn.loginwith=true;
+=======
+                    loginwith = true;
+>>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
                     {
                       setState(() {
-                        
                         _signInWithEmailAndPassword();
-                        
                       });
-                    
                     }
                   },
                   child: Text(
@@ -161,17 +172,17 @@ class _SignInState extends State<SignIn> {
               ),
 
               GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
-                    child: Container(
-                      child: Text('Forgot Password',
-                      style: TextStyle(
+                onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
+                child: Container(
+                  child: Text(
+                    'Forgot Password',
+                    style: TextStyle(
                         color: Colors.blue[600],
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
-                      ),
-                      
-                      ),
-                      ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: size.height * 0.04,
               ),
@@ -188,6 +199,7 @@ class _SignInState extends State<SignIn> {
                 height: size.height * 0.02,
               ),
 
+<<<<<<< HEAD
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -233,11 +245,71 @@ class _SignInState extends State<SignIn> {
                   child: Text(
                     'facebook',
                     style: TextStyle(color: Colors.white, fontSize: 20),
+=======
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SignInButton(
+                    Buttons.Google,
+                    //mini: true,
+                    onPressed: () {
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.googleLogin();
+                    },
                   ),
-                ),
-              ),
+                  SizedBox(
+                    width: size.height * 0.08,
+                  ),
+                  SignInButton(
+                    Buttons.Facebook,
+                    //mini: true,
+                    onPressed: () {},
+>>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
+                  ),
                 ],
               ),
+<<<<<<< HEAD
+=======
+
+              //     Container(
+              //   height: size.height * 0.065,
+              //   width: size.width * 0.6,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(22),
+              //     color: Colors.orange[400],
+              //   ),
+              //   child: TextButton(
+              //     onPressed: () {
+              //       // Navigator.pushNamed(context, 'BottomNavigation');
+              //       final provider =
+              //           Provider.of<GoogleSignInProvider>(context, listen: false);
+              //           provider.googleLogin();
+              //     },
+              //     child: Text(
+              //       'Sign In with google',
+              //       style: TextStyle(color: Colors.white, fontSize: 20),
+              //     ),
+              //   ),
+              // ),
+
+              // SizedBox(
+              //   width: size.width * 0.10,
+              // ),
+
+              // _buildSocialBtn(
+              //   () {
+              //     final provider =
+              //       Provider.of<GoogleSignInProvider>(context, listen: false);
+              //       provider.googleLogin();
+              //   },
+              //   AssetImage(
+              //     'assets/Logos/google.jpg',
+
+              //   ),
+              // ),
+>>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
 
               SizedBox(
                 height: size.height * 0.02,
@@ -253,20 +325,18 @@ class _SignInState extends State<SignIn> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'SignUp'),
                     child: Container(
-                      child: Text('Sign Up',
-                      style: TextStyle(
-                        color: Colors.blue[600],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                            color: Colors.blue[600],
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                      
-                      ),
-                      ),
-                  
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -275,19 +345,24 @@ class _SignInState extends State<SignIn> {
       ),
     );
   }
-  _signInWithEmailAndPassword() async{
-    try{
+
+  _signInWithEmailAndPassword() async {
+    try {
       final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
-          email: _emailController.text.trim(), password: _passwordController.text.trim())).user;
-        if(user!=null){
-          setState(() {
-            Fluttertoast.showToast(msg: "Signed In Sucessfully");
+              email: _emailController.text.trim(),
+              password: _passwordController.text.trim()))
+          .user;
+      if (user != null) {
+        setState(() {
+          Fluttertoast.showToast(msg: "Signed In Sucessfully");
 
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()),);
-          });
-        }
-
-    }catch(e){
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        });
+      }
+    } catch (e) {
       Fluttertoast.showToast(msg: e.toString());
     }
   }

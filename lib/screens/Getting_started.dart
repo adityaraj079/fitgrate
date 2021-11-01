@@ -44,7 +44,7 @@ class _GetStartedState extends State<GetStarted> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        brightness: Brightness.light,
+       // brightness: Brightness.light,
       ),
       body: Center(
         child: Form(
