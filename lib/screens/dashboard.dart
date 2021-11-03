@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitegrate_project/provider/google_sign_in.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);

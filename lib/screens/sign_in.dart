@@ -1,13 +1,13 @@
-//import 'package:fitegrate_project/rounded_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
-import 'package:fitegrate_project/screens/forgotpassword.dart';
+
 import 'package:fitegrate_project/screens/home.dart';
 
-import 'package:fitegrate_project/screens/profile.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 bool loginwith = false;
 
@@ -19,7 +19,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool _issecure=true;
+ 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -108,6 +109,14 @@ class _SignInState extends State<SignIn> {
                   child: TextField(
                     controller: _passwordController,
                     decoration: InputDecoration(
+                      suffixIcon: IconButton(icon: _issecure ? Icon(Icons.visibility_off) : Icon(Icons.visibility), 
+                      onPressed: ()=>
+                      {
+                        setState((){
+                          _issecure=!_issecure;
+
+                        })
+                      },),
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
@@ -125,7 +134,8 @@ class _SignInState extends State<SignIn> {
                           fontWeight: FontWeight.bold),
                     ),
                     keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
+                    obscureText: _issecure,
+                    
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
                       color: Colors.black,
@@ -137,7 +147,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               SizedBox(
-                height: size.height * 0.035,
+                height: size.height * 0.03,
               ),
 
               Container(
@@ -149,11 +159,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: TextButton(
                   onPressed: () async {
-<<<<<<< HEAD
-                    SignIn.loginwith=true;
-=======
                     loginwith = true;
->>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
                     {
                       setState(() {
                         _signInWithEmailAndPassword();
@@ -168,7 +174,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               SizedBox(
-                height: size.height * 0.06,
+                height: size.height * 0.03,
               ),
 
               GestureDetector(
@@ -184,7 +190,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.04,
+                height: size.height * 0.03,
               ),
 
               Text(
@@ -199,53 +205,6 @@ class _SignInState extends State<SignIn> {
                 height: size.height * 0.02,
               ),
 
-<<<<<<< HEAD
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-            
-                  Container(
-                height: size.height * 0.065,
-                width: size.width * 0.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Colors.orange[400],
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    
-                    // Navigator.pushNamed(context, 'BottomNavigation');
-                    final provider = 
-                        Provider.of<GoogleSignInProvider>(context, listen: false);
-                        provider.googleLogin();
-                  },
-                  child: Text(
-                    'google',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ),
-              ),
-
-                  SizedBox(
-                    width: size.width * 0.10,
-                  ),
-
-                  Container(
-                height: size.height * 0.065,
-                width: size.width * 0.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Colors.orange[400],
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    // Navigator.pushNamed(context, 'BottomNavigation');
-                    
-                  },
-                  child: Text(
-                    'facebook',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-=======
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -266,12 +225,9 @@ class _SignInState extends State<SignIn> {
                     Buttons.Facebook,
                     //mini: true,
                     onPressed: () {},
->>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
                   ),
                 ],
               ),
-<<<<<<< HEAD
-=======
 
               //     Container(
               //   height: size.height * 0.065,
@@ -309,7 +265,6 @@ class _SignInState extends State<SignIn> {
 
               //   ),
               // ),
->>>>>>> c69ab7b6e560506e36ad3a55da2de362fa5f5edf
 
               SizedBox(
                 height: size.height * 0.02,

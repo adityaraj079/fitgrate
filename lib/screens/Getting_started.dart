@@ -12,11 +12,11 @@ class _GetStartedState extends State<GetStarted> {
   //int age=0,height=0,weight=0;
   //Long phno;
   String gender= 'pnts',age='Null',height='Null',weight='Null',phno='Null';
-  bool _isloading = false;
+  
   confirm_details() async{
     if(_formKey.currentState!.validate()){
       setState(() {
-        _isloading = true;
+        
       });
       Map<String,String> basicinfoMap = {
         "age" : age,

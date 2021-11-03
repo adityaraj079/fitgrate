@@ -41,10 +41,7 @@ class _ProfileState extends State<Profile> {
               style: TextStyle(fontSize: 24),
             ),
             SizedBox(height: 32),
-            // CircleAvatar(
-            //   radius: 40,
-            //   backgroundImage: NetworkImage(user.photoURL!)
-            // ),
+           
             SizedBox(height: 8),
             Text(
               'Name  ' + user.displayName!,
@@ -81,6 +78,6 @@ class _ProfileState extends State<Profile> {
 
 @override
 Widget build(BuildContext context) {
-  // TODO: implement build
+  
   throw UnimplementedError();
 }

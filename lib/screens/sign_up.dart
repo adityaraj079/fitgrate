@@ -4,8 +4,6 @@ import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:fitegrate_project/provider/google_sign_in.dart';
 
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
@@ -49,7 +47,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -115,14 +113,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              //        Container(
-              // height:size.height * 0.08,
-              // width: size.width * 0.8,
-              // decoration: BoxDecoration(
-              //   color: Colors.orange,
-              //   borderRadius: BorderRadius.circular(16),
-              // ),
-              //        ),
+            
 
               SizedBox(
                 height: size.height * 0.02,
