@@ -209,14 +209,14 @@ class _SignInState extends State<SignIn> {
                       provider.googleLogin();
                     },
                   ),
-                  SizedBox(
-                    width: size.height * 0.08,
-                  ),
-                  SignInButton(
-                    Buttons.Facebook,
-                    //mini: true,
-                    onPressed: () {},
-                  ),
+                  // SizedBox(
+                  //   width: size.height * 0.08,
+                  // ),
+                  // SignInButton(
+                  //   Buttons.Facebook,
+                  //   //mini: true,
+                  //   onPressed: () {},
+                  // ),
                 ],
               ),
 

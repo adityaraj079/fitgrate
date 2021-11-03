@@ -2,12 +2,16 @@ import 'dart:core';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
+import 'package:fitegrate_project/screens/VideoAssessment/balance.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/forgotpassword.dart';
 import 'package:fitegrate_project/screens/healthassessment.dart';
 import 'package:fitegrate_project/screens/home.dart';
+import 'package:fitegrate_project/screens/pre-requisite.dart';
 import 'package:fitegrate_project/screens/sign_up.dart';
+import 'package:fitegrate_project/screens/warmup/crossToeTouch.dart';
+import 'package:fitegrate_project/screens/warmup/spotjog.dart';
 import 'package:flutter/material.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
 
@@ -42,6 +46,10 @@ class MyApp extends StatelessWidget {
         'BottomNavigation':(context) => MyStatefulWidget(),
         'forgotpassword':(context) => forgotpassword(),
         'HealthAssessment':(context) => HealthAssessment(),
+        'PreRequisite':(context) => PreRequisite(),
+        'SpotJog':(context) => SpotJog(),
+        'CrossToeTouch':(context) => CrossToeTouch(),
+        'VideoAssessmentBalance':(context) => VideoAssessmentBalance(),
       },
       ),
       ); 
