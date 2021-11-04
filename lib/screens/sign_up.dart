@@ -143,7 +143,7 @@ bool _issecure2=true;
                           color: Colors.black87,
                         ),
                       ),
-                      
+
                       hintText: 'Email id',
                       hintStyle: TextStyle(
                           color: Colors.black87,
@@ -160,13 +160,11 @@ bool _issecure2=true;
                 ),
               ),
 
-
               SizedBox(
                 height: size.height * 0.02,
               ),
 
-
-               Container(
+              Container(
                 height: size.height * 0.065,
                 width: size.width * 0.6,
                 decoration: BoxDecoration(
@@ -174,8 +172,8 @@ bool _issecure2=true;
                   color: Colors.black87,
                 ),
                 child: TextButton(
-                  onPressed: () async {
-                   
+                  onPressed: ()  {
+                    Navigator.pushNamed(context, 'OtpVerification');
                   },
                   child: Text(
                     'Send OTP',
@@ -185,9 +183,7 @@ bool _issecure2=true;
                 ),
               ),
 
-
-
-               SizedBox(
+              SizedBox(
                 height: size.height * 0.02,
               ),
               Container(
@@ -227,8 +223,6 @@ bool _issecure2=true;
                   ),
                 ),
               ),
-
-
 
               SizedBox(
                 height: size.height * 0.02,
@@ -355,8 +349,6 @@ bool _issecure2=true;
               SizedBox(
                 height: size.height * 0.03,
               ),
-
-              
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
