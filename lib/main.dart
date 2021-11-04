@@ -8,13 +8,13 @@ import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/forgotpassword.dart';
 import 'package:fitegrate_project/screens/healthassessment.dart';
 import 'package:fitegrate_project/screens/home.dart';
+import 'package:fitegrate_project/screens/otp_authentication.dart';
 import 'package:fitegrate_project/screens/pre-requisite.dart';
 import 'package:fitegrate_project/screens/sign_up.dart';
 import 'package:fitegrate_project/screens/warmup/crossToeTouch.dart';
 import 'package:fitegrate_project/screens/warmup/spotjog.dart';
 import 'package:flutter/material.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
-
 import 'package:provider/provider.dart';
 
 Future main() async{
@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
         'SpotJog':(context) => SpotJog(),
         'CrossToeTouch':(context) => CrossToeTouch(),
         'VideoAssessmentBalance':(context) => VideoAssessmentBalance(),
+        'OtpVerification':(context) => OtpVerification(),
       },
       ),
       ); 

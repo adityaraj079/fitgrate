@@ -151,7 +151,7 @@ class _SignUpState extends State<SignUp> {
                           color: Colors.black87,
                         ),
                       ),
-                      
+
                       hintText: 'Email id',
                       hintStyle: TextStyle(
                           color: Colors.black87,
@@ -168,13 +168,11 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
 
-
               SizedBox(
                 height: size.height * 0.02,
               ),
 
-
-               Container(
+              Container(
                 height: size.height * 0.065,
                 width: size.width * 0.6,
                 decoration: BoxDecoration(
@@ -182,8 +180,8 @@ class _SignUpState extends State<SignUp> {
                   color: Colors.black87,
                 ),
                 child: TextButton(
-                  onPressed: () async {
-                   
+                  onPressed: ()  {
+                    Navigator.pushNamed(context, 'OtpVerification');
                   },
                   child: Text(
                     'Send OTP',
@@ -193,9 +191,7 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
 
-
-
-               SizedBox(
+              SizedBox(
                 height: size.height * 0.02,
               ),
               Container(
@@ -235,8 +231,6 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-
-
 
               SizedBox(
                 height: size.height * 0.02,
@@ -347,8 +341,6 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: size.height * 0.03,
               ),
-
-              
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
