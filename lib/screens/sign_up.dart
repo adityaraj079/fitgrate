@@ -47,7 +47,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-
+bool _issecure=true; 
+bool _issecure2=true;    
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -169,6 +170,14 @@ class _SignUpState extends State<SignUp> {
                   child: TextField(
                     controller: _passwordController,
                     decoration: InputDecoration(
+                       suffixIcon: IconButton(icon: _issecure ? Icon(Icons.visibility_off) : Icon(Icons.visibility), 
+                      onPressed: ()=>
+                      {
+                        setState((){
+                          _issecure=!_issecure;
+
+                        })
+                      },),
                       border: InputBorder.none,
                       // contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
@@ -190,7 +199,7 @@ class _SignUpState extends State<SignUp> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
+                    obscureText: _issecure,
                     textInputAction: TextInputAction.next,
                   ),
                 ),
@@ -210,6 +219,14 @@ class _SignUpState extends State<SignUp> {
                   child: TextField(
                     controller: _confpasswordController,
                     decoration: InputDecoration(
+                      suffixIcon: IconButton(icon: _issecure2 ? Icon(Icons.visibility_off) : Icon(Icons.visibility), 
+                      onPressed: ()=>
+                      {
+                        setState((){
+                          _issecure2=!_issecure2;
+
+                        })
+                      },),
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
@@ -231,7 +248,7 @@ class _SignUpState extends State<SignUp> {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
+                    obscureText: _issecure2,
                     textInputAction: TextInputAction.next,
                   ),
                 ),

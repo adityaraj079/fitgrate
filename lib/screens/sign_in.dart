@@ -216,6 +216,7 @@ class _SignInState extends State<SignIn> {
                           context,
                           listen: false);
                       provider.googleLogin();
+                      
                     },
                   ),
                   SizedBox(
