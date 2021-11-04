@@ -170,7 +170,9 @@ class _DashBoardState extends State<DashBoard> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, 'PreRequisite');
+                                    },
                                     child: Text(
                                       'Cardio',
                                       style: TextStyle(
@@ -196,7 +198,9 @@ class _DashBoardState extends State<DashBoard> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, 'SpotJog');
+                                    },
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           10, 5, 10, 5),
@@ -273,7 +277,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, 'SignIn');
+                        Navigator.pushNamed(context, 'VideoAssessmentBalance');
                         // main();
                         // UserCredential userCredential = await auth.signInAnonymously();
                         // print(userCredential);

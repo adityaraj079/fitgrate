@@ -219,14 +219,14 @@ class _SignInState extends State<SignIn> {
                       
                     },
                   ),
-                  SizedBox(
-                    width: size.height * 0.08,
-                  ),
-                  SignInButton(
-                    Buttons.Facebook,
-                    //mini: true,
-                    onPressed: () {},
-                  ),
+                  // SizedBox(
+                  //   width: size.height * 0.08,
+                  // ),
+                  // SignInButton(
+                  //   Buttons.Facebook,
+                  //   //mini: true,
+                  //   onPressed: () {},
+                  // ),
                 ],
               ),
 
